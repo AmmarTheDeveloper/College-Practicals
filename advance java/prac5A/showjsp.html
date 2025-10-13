@@ -1,0 +1,39 @@
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%
+    pageContext.setAttribute("colour", "pink");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display Page</title>
+</head>
+<body bgcolor="${pageScope.colour}">
+    <b>Welcome ${param.ufname} ${param.ulname}</b> <br>
+
+    Below we are accessing Application object:
+    <p>
+        Author Name: <b>${applicationScope.author}</b>
+    </p>
+
+    Below we are accessing Session object:
+    <p>
+        Author Country: <b>${sessionScope.country}</b>
+    </p>
+
+    Below we are showing some basic comparisons Using EL:
+    <p>
+        Is 1 less than 2? ${1 lt 2} <br>
+        Does 5 equal 5? ${5 eq 5} <br>
+        Is 6 greater than 7? ${6 gt 7} <br>
+    </p>
+
+    <p>Now for some maths:<br>
+        6 + 7 = ${6 + 7} <br>
+        8 x 9 = ${8 * 9} <br>
+    </p>
+
+    <hr>
+    You appear to be using the following browser:
+    ${header["user-agent"]}
+</body>
+</html>

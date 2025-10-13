@@ -1,0 +1,26 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default2.aspx.cs" Inherits="Default2" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <h2>Vacation Planner</h2>
+            <asp:Label ID="Label1" runat="server" Text="Select your vacation start date:"></asp:Label>
+            <br />
+            <asp:Calendar ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged"></asp:Calendar>
+            <br /><br />
+            <asp:Label ID="Label2" runat="server" Text="Vacation Details:"></asp:Label>
+            <br />
+            <asp:TextBox ID="TextBoxDetails" runat="server" TextMode="MultiLine" Rows="5" Columns="30"></asp:TextBox>
+            <br /><br />
+            <asp:Button ID="Button1" runat="server" Text="Save Vacation" OnClick="Button1_Click" />
+            <br /><br />
+            <asp:Label ID="LabelResult" runat="server" Text=""></asp:Label>
+        </div>
+    </form>
+</body>
+</html>

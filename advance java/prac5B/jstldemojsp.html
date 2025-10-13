@@ -1,0 +1,31 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Welcome Page</title>
+</head>
+<body>
+    First Name:<b> <c:out value="${param.fname}"></c:out> </b><br/>
+    Last Name: <b> <c:out value="${param.lname}"></c:out> </b><br/><br/>
+Use of if statement
+<br>
+<c:set var="mycount" value="25"/>
+<c:if test="${mycount == 25}">
+    <b> <c:out value="Your count is 25"/> </b>
+</c:if>
+<br><br>
+Use of forEach statement
+<br>
+<c:forEach var="count" begin="101" end="105">
+    <b> <c:out value="${count}"/> </b>
+</c:forEach>
+<br><br>
+Exception catching Example
+<p>
+<c:catch var="myException">
+<% int number = 10/0; %>
+</c:catch>
+    <b> The Exception is : ${myException} </b>
+</p>
+</body>
+</html>

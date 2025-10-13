@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Expression language example2</title>
+</head>
+<body>
+<form action="show.jsp">
+User First Name: <input type="text" name="ufname" /><br>
+User First Name:<input type="text" name="ulname" /><br>
+<input type="submit" value="Check EL Use!!"/>
+</form>
+</body>
+</html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+application.setAttribute("author","Tushar Sambare");
+session.setAttribute("country","India");
+%>

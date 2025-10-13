@@ -1,0 +1,73 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ValidationPract.aspx.cs" Inherits="ValidationPract" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Validation Example</title>
+    <script runat="server">
+        void ValidateBtn_OnClick(object sender, EventArgs e)
+        {
+            if (Page.IsValid)
+            {
+                lbl1.Text = "Thank You!";
+            }
+            else
+            {
+                lbl1.Text = "The text must be exactly 8 characters long!";
+            }
+        }
+
+        void ServerValidation(object source, ServerValidateEventArgs e)
+        {
+            if (e.Value.Length == 8)
+                e.IsValid = true;
+            else
+                e.IsValid = false;
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            Your name:<br />
+            <asp:TextBox runat="server" id="txtName" />
+            <asp:RequiredFieldValidator runat="server" id="reqName" ForeColor="Red" ControlToValidate="txtName" ErrorMessage="Please enter your name!" /><br /><br />
+
+            Enter age:<br />
+            <asp:TextBox runat="server" id="txt1" />
+            <asp:RangeValidator ID="RangeValidator2" Type="Integer" runat="server" ForeColor="Red"
+                ControlToValidate="txt1" MinimumValue="18" MaximumValue="100" ErrorMessage="Not valid age"></asp:RangeValidator>
+            <br /><br />
+
+            Password:<br />
+            <asp:TextBox runat="server" id="txt11" TextMode="Password" /><br />
+            ReEnter Password:<br />
+            <asp:TextBox runat="server" id="txt12" TextMode="Password" /><br />
+            <asp:CompareValidator runat="server" id="cmpNumbers" ForeColor="Red"
+                ControlToValidate="txt12" ControlToCompare="txt11"
+                Operator="Equal" Type="String"
+                ErrorMessage="Password should match" />
+            <br /><br />
+
+            Email ID:<br />
+            <asp:TextBox runat="server" id="txtNumber" />
+            <asp:RegularExpressionValidator runat="server" ForeColor="Red" id="rexNumber"
+                ControlToValidate="txtNumber" ErrorMessage="Please enter valid email address!"
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" /> Please enter valid email address
+            <br /><br />
+
+            Custom text:<br />
+            <asp:TextBox runat="server" id="txtCustom" />
+            <asp:CustomValidator ID="CustomValidator1" ControlToValidate="txtCustom"
+                OnServerValidate="ServerValidation" Display="Static" ForeColor="Red"
+                ErrorMessage="Text must be exactly 8 characters long." runat="server" />
+            <br /><br />
+
+            <asp:Label id="lbl1" runat="server" Font-Names="Verdana" Font-Size="10pt" ForeColor="Red" /><br />
+            <asp:Button ID="Button1" Text="Validate" OnClick="ValidateBtn_OnClick" runat="server" />
+            <br /><br />
+
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+        </div>
+    </form>
+</body>
+</html>

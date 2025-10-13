@@ -1,0 +1,28 @@
+1a. Create a simple calculator application using servlet.
+
+1b. Create a servlet for a login page. If the username and password are correct then it says message 
+“Hello <username>” else a message “login failed”
+
+1c. Create a registration servlet in Java using JDBC. Accept the details such as Username, Password, 
+Email, and Country from the user using HTML Form and store the registration details in the database. 
+
+2a. Using Request Dispatcher Interface create a Servlet which will validate the password entered by 
+the user, if the user has entered "Servlet" as password, then he will be forwarded to Welcome Servlet 
+else the user will stay on the index.html page and an error message will be displayed.
+
+2b. Create a servlet demonstrating the use of session creation and destruction. Also check whether the 
+user has visited this page first time or has visited earlier also using sessions.
+
+3a. Create a Servlet application to upload and download a file. 
+
+3b. Develop Simple Servlet Question Answer Application using Database.
+
+4a. Develop a simple JSP application to pass values from one page to another with validations. 
+(Name-txt, age-txt, hobbies-checkbox, email-txt, gender-radio button).
+
+4b. Create a registration and login JSP application to register and authenticate the user based on 
+username and password using JDBC.
+
+5a. Create a JSP page to demonstrate the use of Expression language
+
+5c. Create a JSP application to demonstrate the use of JSTL.

@@ -1,0 +1,21 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TreeViewDemo.aspx.cs" Inherits="TreeViewDemo" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+        </div>
+        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="XmlDataSource1">
+            <DataBindings>
+                <asp:TreeNodeBinding DataMember="sid" ValueField="#InnerText" />
+                <asp:TreeNodeBinding DataMember="sname" ValueField="#InnerText" />
+                <asp:TreeNodeBinding DataMember="sclass" ValueField="#InnerText" />
+            </DataBindings>
+        </asp:TreeView>
+        <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/stdetail.xml"></asp:XmlDataSource>
+    </form>
+</body>
+</html>
